@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+body{
+    font-size: 16px;
+    overflow: hidden;
+}
+*, ::after, ::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*-------------------------------HEADER-------------------------------------*/
+ul{
+    list-style: none;
+}
+  
+.active{
+    color: rgb(14, 167, 255);
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+header{
+    height: 20%;
+    width: 100%;
+    background: rgb(24, 52, 75);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nomSite{
+        font-size: 1.5rem;
+        color: rgb(114, 219, 223);
+        font-family: 'Ubuntu', sans-serif;
+    }
+    &::before{
+        content: url(img/percentageIcon.svg);
+        height: 60px;
+        width: 60px;
+        margin-left: 40px;
+        margin-right: 0;
+        line-height: none;
+    }
+    .menu{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        li {
+            padding: 50px;
+            a{
+                font-size: 1.8rem;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                transition: 0.5s;
+                position: relative;
+                &::after{
+                    content: "";
+                    background: rgb(255, 102, 0);
+                    width: 0%;
+                    height: 3px;
+                    position: absolute;
+                    left: 0;
+                    bottom: -3px;
+                    transition: 0.4s;
+                }
+                &:hover::after{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+/*-------------------------------CORPS DU SITE-------------------------------------*/
+.outer-container{
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(-90deg) translateX(-100vh);
+    transform-origin: top left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 100vw;
+    width: 400vw;
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
+}
+.page{
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+.augm-baisse{
+    background: rgb(231, 107, 107);
+}
+.variation{
+    background: rgb(70, 233, 143);
+}
+.pourcEnNb{
+    background: rgb(201, 233, 60);
+}
+.nbEnPourc{
+    background: rgb(101, 74, 250);
+}
