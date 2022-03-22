@@ -16,30 +16,72 @@
             <h1>PourcentCalc</h1>
         </div>
         <ul class="menu">
-            <li><a href="#augm/bais" class="active">Augmentation/baisse</a></li>
+            <li><a href="#augm_bais" class="active">Augmentation/Baisse</a></li>
             <li><a href="#variation">Variation</a></li>
-            <li><a href="#%enNb">Pourcentage en nombre</a></li>
-            <li><a href="#nben%">Nombre en pourcentage</a></li>
+            <li><a href="#pctEnNb">Pourcentage en nombre</a></li>
+            <li><a href="#nbEnPct">Nombre en pourcentage</a></li>
         </ul>
     </header>
 
     <div class="outer-container">
-        <div class="container">
-            <div class="augm-baisse page">
-                <h1 id="augm/bais">Augmentation/Baisse</h1>
+        <div class="inner-container">
+            <div class="pages-container">
+                <div id="augm_bais" class="augm-baisse page">
+                    <div class="bordures">
+                        <div class="augmentation">
+                            <span>Augmentation</span>
+                            <div class="inputAugmentation">
+                                <input type="text" placeholder="Le nombre">
+                                <input type="text" placeholder="Le % d'augmentation">
+                            </div>
+                            <p>Résultat : <input type="text"></p>
+                        </div>
+                        <hr>
+                        <div class="baisse">
+                            <span>Baisse</span>
+                            <div class="inputBaisse">
+                                <input type="text" placeholder="Le nombre">
+                                <input type="text" placeholder="Le % de baisse">
+                            </div>
+                            <p>Résultat : <input type="text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="variation" class="variation page">
+                    <div class="bordures">
+                        <p class="titre">Calculez le pourcentage de variation entre une valeur1 et une valeur2</p>
+                        <div class="inputs">
+                            <input type="text" placeholder="Valeur1">
+                            <input type="text" placeholder="Valeur2">
+                        </div>
+                        <p class="resultat">Le taux de variation est de <input type="text">%</p>
+                    </div>
+                </div>
+                <div id="pctEnNb" class="pourcEnNb page">
+                    <div class="bordures">
+                        <p class="titre">Convertir un pourcentage d'une valeur en nombre</p>
+                        <div class="inputs">
+                            <input type="text" placeholder="Pourcentage">
+                            <input type="text" placeholder="Valeur">
+                        </div>
+                        <p class="resultat"><input type="text">% de <input type="text"> est égale a <input type="text">
+                        </p>
+                    </div>
+                </div>
+                <div id="nbEnPct" class="nbEnPourc page">
+                    <div class="bordures">
+                        <p class="titre">Convertir en pourcentage une valeur1 par rapport a une valeur2</p>
+                        <div class="inputs">
+                            <input type="text" placeholder="Valeur1">
+                            <input type="text" placeholder="Valeur2">
+                        </div>
+                        <p class="resultat"><input type="text" placeholder="valeur1">est égale a <input type="text">% de
+                            <input type="text" placeholder="valeur2">
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="variation page">
-                <h1 id="variation">Variation</h1>
-            </div>
-            <div class="pourcEnNb page">
-                <h1 id="%enNb">Pourcentage en nombre</h1>
-            </div>
-            <div class="nbEnPourc page">
-                <h1 id="nben%">Nombre en pourcentage</h1>
-            </div>
-        </div>
-    </div>
-    <script src="style.js"></script>
+            <script src="style.js"></script>
 </body>
 
 </html>
