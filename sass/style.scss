@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import "libs/mixins.scss";
 body{
     font-size: 16px;
     overflow: hidden;
@@ -45,7 +46,7 @@ header {
     font-family: "Ubuntu", sans-serif;
   }
   &::before {
-    content: url(img/percentageIcon.svg);
+    content: url(../img/percentageIcon.svg);
     height: 60px;
     width: 60px;
     margin-left: 2rem;
@@ -115,9 +116,15 @@ header {
   align-items: center;
   flex-shrink: 0;
   width: 100vw;
-  height: 100vh;
+  height: 115vh;
   scroll-snap-align: center;
   .augmentation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button#btnAugm{
+      @include styleBtnCalc;
+    }
     .inputAugmentation{
       width: 700px;
       height: 50px;
@@ -141,10 +148,12 @@ header {
       font-weight: 700;
     }
     p{
+      align-self: flex-start;
       margin-top: 70px;
       font-weight: bold;
       font-size: 2rem;
       input{
+        opacity: 0.5;
         font-size: 1.8rem;
         color: rgb(61, 59, 59);
         width: 310px;
@@ -156,6 +165,12 @@ header {
     }
   }
   .baisse{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button#btnBaisse{
+      @include styleBtnCalc
+    }
     margin-top: 30px;
     .inputBaisse{
       width: 700px;
@@ -180,6 +195,7 @@ header {
       font-weight: 700;
     }
     p{
+      align-self: flex-start;
       margin-top: 70px;
       font-weight: bold;
       font-size: 2rem;
@@ -228,6 +244,12 @@ header {
     margin-top: 130px;
   }
   .bordures{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button#btnVariation{
+    @include styleBtnCalc
+    }
     width: 45%;
     height: 80%;
     margin-top: 3%;
@@ -273,6 +295,12 @@ header {
     }
   }
   .bordures{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button#btnPourcEnNb{
+    @include styleBtnCalc
+    }
     width: 45%;
     height: 80%;
     margin-top: 3%;
@@ -318,6 +346,12 @@ header {
     }
   }
   .bordures{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button#btnNbEnPourc{
+    @include styleBtnCalc
+    }
     width: 45%;
     height: 80%;
     margin-top: 3%;
