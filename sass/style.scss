@@ -153,9 +153,9 @@ header {
       font-weight: bold;
       font-size: 2rem;
       input{
-        opacity: 0.5;
+        background: rgba(255, 255, 255, 0.616);
         font-size: 1.8rem;
-        color: rgb(61, 59, 59);
+        color: rgb(15, 15, 15);
         width: 310px;
         text-align: center;
         padding: 5px 8px;
@@ -200,6 +200,7 @@ header {
       font-weight: bold;
       font-size: 2rem;
       input{
+        background: rgba(255, 255, 255, 0.616);
         font-size: 1.8rem;
         color: rgb(61, 59, 59);
         width: 310px;
@@ -230,14 +231,14 @@ header {
   background: $bgPages;
   p.titre{
     margin-top: 7%;
-    font-weight: 700;
+    font-weight: bolder;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 130px;
     line-height: 2.7rem;
     letter-spacing: 0.07rem;
   }
-  p.resultat{
+  p{
     font-weight: 500;
     font-size: 1.8rem;
     text-align: center;
@@ -285,13 +286,15 @@ header {
     line-height: 2.7rem;
     letter-spacing: 0.07rem;
   }
-  p.resultat{
+  p.phraseResultatPourcEnNb{
     font-weight: 500;
     font-size: 1.8rem;
     text-align: center;
     margin-top: 130px;
     input{
+      text-align: center;
       width: 100px;
+      background: rgba(0, 0, 0, 0);
     }
   }
   .bordures{
@@ -317,7 +320,7 @@ header {
   }
   input{
     font-size: 1.8rem;
-    color: rgb(61, 59, 59);
+    color: rgb(15, 15, 15);
     width: 310px;
     text-align: center;
     padding: 5px 8px;
@@ -336,13 +339,14 @@ header {
     line-height: 2.7rem;
     letter-spacing: 0.07rem;
   }
-  p.resultat{
+  p.phraseResultatNbEnPourc{
     font-weight: 500;
     font-size: 1.8rem;
     text-align: center;
     margin-top: 130px;
     input{
       width: 150px;
+      background: rgba(0, 0, 0, 0);
     }
   }
   .bordures{
