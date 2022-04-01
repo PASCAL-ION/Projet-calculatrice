@@ -11,51 +11,56 @@ liens.forEach(lien =>{ /* Pour chaque liens dans le tableau "liens" */
 const inputAugmentationNb = document.querySelector(".augmentationNb")
 const inputAugmentationPourc = document.querySelector(".augmentationPourc")
 const bouttonAugmentation = document.querySelector("#btnAugm")
-const inputResultatAugmentation = document.querySelector(".resultatAugmentation")
-
+const phraseResultatAugmentation = document.querySelector(".resultatAugmentation")
+let resultatCalculAugmentation = 0
 
 bouttonAugmentation.addEventListener("click", function (){
-    inputResultatAugmentation.value = parseFloat(inputAugmentationNb.value) + (parseFloat(inputAugmentationPourc.value)/100 * parseInt(inputAugmentationNb.value))
+    phraseResultatAugmentation = "Veuillez remplir les deux champs"
+    resultatCalculAugmentation = parseFloat(inputAugmentationNb.value) + (parseFloat(inputAugmentationPourc.value)/100 * parseInt(inputAugmentationNb.value))
+    phraseResultatAugmentation.innerHTML = `${inputAugmentationNb.value} + ${inputAugmentationPourc.value}% est égal a ${resultatCalculAugmentation}`
 })
 
 /* ---------------------------------Baisse------------------------------------------------ */
 const inputBaisseNb = document.querySelector(".baisseNb")
 const inputBaissePourc = document.querySelector(".baissePourc")
 const bouttonBaisse = document.querySelector("#btnBaisse")
-const inputResultatBaisse = document.querySelector(".resultatBaisse")
-
+const phraseResultatBaisse = document.querySelector(".phraseResultatBaisse")
+let resultatCalculBaisse = 0
 
 bouttonBaisse.addEventListener("click", function (){
-    inputResultatBaisse.value = parseFloat(inputBaisseNb.value) - (parseFloat(inputBaissePourc.value)/100 * parseInt(inputBaisseNb.value))
+    resultatCalculBaisse = parseFloat(inputBaisseNb.value) - (parseFloat(inputBaissePourc.value)/100 * parseInt(inputBaisseNb.value))
+    phraseResultatBaisse.innerHTML = `${inputBaisseNb.value} - ${inputBaissePourc.value}% est égal a ${resultatCalculBaisse}`
 })
 /* ------------------------------------------Variation------------------------------------- */
 const inputVariationValeur1 = document.querySelector(".variationValeur1")
 const inputVariationValeur2 = document.querySelector(".variationValeur2")
-const inputResultatVariation = document.querySelector(".resultatVariation")
 const bouttonVariation = document.querySelector("#btnVariation")
+const phraseResultatVariation = document.querySelector(".phraseResultatVariation")
+let resultatCalculVariation = 0
 
 bouttonVariation.addEventListener("click", function(){
-    inputResultatVariation.value = ((parseFloat(inputVariationValeur2.value) - parseFloat(inputVariationValeur1.value))/parseFloat(inputVariationValeur1.value))*100
+    resultatCalculVariation = ((parseFloat(inputVariationValeur2.value) - parseFloat(inputVariationValeur1.value))/parseFloat(inputVariationValeur1.value))*100
+    phraseResultatVariation.innerHTML = `Le taux de variation entre ${inputVariationValeur1.value} et ${inputVariationValeur2.value} est de ${resultatCalculVariation}%`
 })
 /* -------------------------------------------Pourcentage en nombre---------------------------------- */
 const inputPourcEnNbPourcentage = document.querySelector(".inputPourcEnNbPourcentage")
 const inputPourcEnNbValeur = document.querySelector(".inputPourcEnNbValeur")
 const bouttonPourcEnNb = document.querySelector("#btnPourcEnNb")
-const resultatPourcEnNb = document.querySelector(".resultatPourcEnNb")
-const paragrapheResultat = document.querySelector(".phraseResultatPourcEnNb")
+const phraseResultatPourcEnNb = document.querySelector(".phraseResultatPourcEnNb")
+let resultatCalculPourcEnNb = 0
 
 bouttonPourcEnNb.addEventListener("click", function(){
-    resultatPourcEnNb.value = (parseFloat(inputPourcEnNbPourcentage.value) * parseFloat(inputPourcEnNbValeur.value)/100)
-    paragrapheResultat.innerHTML = `${inputPourcEnNbPourcentage.value}% de ${inputPourcEnNbValeur.value} est égal a ${resultatPourcEnNb.value}`
+    resultatCalculPourcEnNb = (parseFloat(inputPourcEnNbPourcentage.value) * parseFloat(inputPourcEnNbValeur.value)/100)
+    phraseResultatPourcEnNb.innerHTML = `${inputPourcEnNbPourcentage.value}% de ${inputPourcEnNbValeur.value} est égal a ${resultatCalculPourcEnNb}`
 })
 /* -------------------------------------------Nombre en pourcentage---------------------------------- */
 const inputNbEnPourcValeur1 = document.querySelector(".inputNbEnPourcValeur1")
 const inputNbEnPourcValeur2 = document.querySelector(".inputNbEnPourcValeur2")
 const bouttonNombreEnPourcentages = document.querySelector("#btnNbEnPourc")
 const phraseResultatNbEnPourc = document.querySelector(".phraseResultatNbEnPourc")
-const resultatCalculNnEnPourc = ""
+let resultatCalculNbEnPourc = 0
 
 bouttonNombreEnPourcentages.addEventListener("click", function(){
-    resultatCalculNnEnPourc = parseFloat(inputNbEnPourcValeur1.value) * 100 / parseFloat(inputNbEnPourcValeur2.value)
-    phraseResultatNbEnPourc.innerHTML = "test" /* `${inputNbEnPourcValeur1.value} represente ${resultatCalculNnEnPourc}% de ${inputNbEnPourcValeur2.value}` */
+    resultatCalculNbEnPourc = parseFloat(inputNbEnPourcValeur1.value) * 100 / parseFloat(inputNbEnPourcValeur2.value)
+    phraseResultatNbEnPourc.innerHTML = `${inputNbEnPourcValeur1.value} represente ${resultatCalculNbEnPourc}% de ${inputNbEnPourcValeur2.value}`
 })

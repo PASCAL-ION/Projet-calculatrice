@@ -31,21 +31,22 @@
                         <div class="augmentation">
                             <span>Augmentation</span>
                             <div class="inputAugmentation">
-                                <input class="augmentationNb" type="text" placeholder="Le nombre" value="">
-                                <input class="augmentationPourc" type="text" placeholder="Le % d'augmentation" value="">
+                                <input class="augmentationNb" type="number" placeholder="Le nombre" value="">
+                                <input class="augmentationPourc" type="number" placeholder="Le % d'augmentation"
+                                    value="">
                             </div>
                             <button id="btnAugm">CALCULER</button>
-                            <p>Résultat : <input class="resultatAugmentation" type="text" value=""></p>
+                            <p class="resultatAugmentation"></p>
                         </div>
                         <hr>
                         <div class="baisse">
                             <span>Baisse</span>
                             <div class="inputBaisse">
-                                <input class="baisseNb" type="text" placeholder="Le nombre" value="">
-                                <input class="baissePourc" type="text" placeholder="Le % de baisse" value="">
+                                <input class="baisseNb" type="number" placeholder="Le nombre" value="">
+                                <input class="baissePourc" type="number" placeholder="Le % de baisse" value="">
                             </div>
                             <button id="btnBaisse">CALCULER</button>
-                            <p>Résultat : <input class="resultatBaisse" type="text"></p>
+                            <p class="phraseResultatBaisse"></p>
                         </div>
                     </div>
                 </div>
@@ -53,30 +54,30 @@
                     <div class="bordures">
                         <p class="titre">Calculez le pourcentage de variation entre une valeur1 et une valeur2</p>
                         <div class="inputs">
-                            <input class="variationValeur1" type="text" placeholder="Valeur1" value="">
-                            <input class="variationValeur2" type="text" placeholder="Valeur2" value="">
+                            <input class="variationValeur1" type="number" placeholder="Valeur1" value="">
+                            <input class="variationValeur2" type="number" placeholder="Valeur2" value="">
                         </div>
                         <button id="btnVariation">CALCULER</button>
-                        <p>Le taux de variation est de <input class="resultatVariation" type="text" value="">%</p>
+                        <p class="phraseResultatVariation"></p>
                     </div>
                 </div>
                 <div id="pctEnNb" class="pourcEnNb page">
                     <div class="bordures">
                         <p class="titre">Convertir un pourcentage d'une valeur en nombre</p>
                         <div class="inputs">
-                            <input class="inputPourcEnNbPourcentage" type="text" placeholder="Pourcentage" value="">
-                            <input class="inputPourcEnNbValeur" type="text" placeholder="Valeur" value="">
+                            <input class="inputPourcEnNbPourcentage" type="number" placeholder="Pourcentage" value="">
+                            <input class="inputPourcEnNbValeur" type="number" placeholder="Valeur" value="">
                         </div>
                         <button id="btnPourcEnNb">CALCULER</button>
-                        <p class="phraseResultatPourcEnNb"><input class="resultatPourcEnNb" type="text" value=""></p>
+                        <p class="phraseResultatPourcEnNb"></p>
                     </div>
                 </div>
                 <div id="nbEnPct" class="nbEnPourc page">
                     <div class="bordures">
                         <p class="titre">Convertir en pourcentage une valeur1 par rapport a une valeur2</p>
                         <div class="inputs">
-                            <input class="inputNbEnPourcValeur1" type="text" placeholder="Valeur1" value="">
-                            <input class="inputNbEnPourcValeur2" type="text" placeholder="Valeur2" value="">
+                            <input class="inputNbEnPourcValeur1" type="number" placeholder="Valeur1" value="">
+                            <input class="inputNbEnPourcValeur2" type="number" placeholder="Valeur2" value="">
                         </div>
                         <button id="btnNbEnPourc">CALCULER</button>
                         <p class="phraseResultatNbEnPourc"></p>

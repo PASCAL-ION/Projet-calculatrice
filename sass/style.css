@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
 body {
@@ -7,12 +8,19 @@ body {
 }
 
 *,
-::after,
-::before {
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  /*Faire disparaître les petites flèches des champs number*/
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /*-------------------------------HEADER-------------------------------------*/
@@ -511,11 +519,7 @@ header .menu li a:hover::after {
   font-size: 1.8rem;
   text-align: center;
   margin-top: 130px;
-}
-
-.nbEnPourc p.phraseResultatNbEnPourc input {
-  width: 150px;
-  background: rgba(0, 0, 0, 0);
+  width: auto;
 }
 
 .nbEnPourc .bordures {
@@ -573,4 +577,20 @@ header .menu li a:hover::after {
   border: none;
   border-radius: 10px;
 }
+
+/* @media all and (max-width: 1800px) {
+  .inputs {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 15%;
+  }
+
+  header {
+    flex-direction: column;
+    height: 100%;
+    width: 30%;
+    z-index: 2;
+  }
+} */
 /*# sourceMappingURL=style.css.map */

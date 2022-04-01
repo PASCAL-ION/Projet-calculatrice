@@ -1,18 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 @import "libs/mixins.scss";
-body{
-    font-size: 16px;
-    overflow: hidden;
-    font-family: "Ubuntu", sans-serif;
+
+body {
+  font-size: 16px;
+  overflow: hidden;
+  font-family: "Ubuntu", sans-serif;
 }
-$bgPages: radial-gradient(rgb(79, 174, 187),rgb(3, 64, 121));
+
+$bgPages: radial-gradient(rgb(79, 174, 187), rgb(3, 64, 121));
+
 *,
-::after,
-::before {
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  /*Faire disparaître les petites flèches des champs number*/
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /*-------------------------------HEADER-------------------------------------*/
@@ -45,6 +55,7 @@ header {
     color: rgb(114, 219, 223);
     font-family: "Ubuntu", sans-serif;
   }
+
   &::before {
     content: url(../img/percentageIcon.svg);
     height: 60px;
@@ -52,6 +63,7 @@ header {
     margin-left: 2rem;
     line-height: none;
   }
+
   .menu {
     display: flex;
     justify-content: space-around;
@@ -59,12 +71,14 @@ header {
 
     li {
       padding: 2.4rem;
+
       a {
         font-size: 1.8rem;
         font-family: "Roboto", sans-serif;
         font-weight: 400;
         transition: 0.5s;
         position: relative;
+
         &::after {
           content: "";
           background: rgb(255, 102, 0);
@@ -75,6 +89,7 @@ header {
           bottom: -3px;
           transition: 0.4s;
         }
+
         &:hover::after {
           width: 100%;
         }
@@ -90,9 +105,11 @@ header {
   height: 100%;
   width: 100%;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
+
 .inner-container {
   padding-top: 6rem;
   display: flex;
@@ -109,6 +126,7 @@ header {
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 }
+
 .page {
   display: flex;
   flex-direction: column;
@@ -118,19 +136,23 @@ header {
   width: 100vw;
   height: 115vh;
   scroll-snap-align: center;
-  .augmentation{
+
+  .augmentation {
     display: flex;
     flex-direction: column;
     align-items: center;
-    button#btnAugm{
+
+    button#btnAugm {
       @include styleBtnCalc;
     }
-    .inputAugmentation{
+
+    .inputAugmentation {
       width: 700px;
       height: 50px;
       display: flex;
       justify-content: space-between;
-      input{
+
+      input {
         font-size: 1.8rem;
         color: rgb(61, 59, 59);
         width: 310px;
@@ -140,19 +162,22 @@ header {
         border-radius: 10px;
       }
     }
-    span{
+
+    span {
       margin: 0% 0 50px 0;
       display: block;
       text-align: center;
       font-size: 4rem;
       font-weight: 700;
     }
-    p{
+
+    p {
       align-self: flex-start;
       margin-top: 70px;
       font-weight: bold;
       font-size: 2rem;
-      input{
+
+      input {
         background: rgba(255, 255, 255, 0.616);
         font-size: 1.8rem;
         color: rgb(15, 15, 15);
@@ -164,20 +189,25 @@ header {
       }
     }
   }
-  .baisse{
+
+  .baisse {
     display: flex;
     flex-direction: column;
     align-items: center;
-    button#btnBaisse{
+
+    button#btnBaisse {
       @include styleBtnCalc
     }
+
     margin-top: 30px;
-    .inputBaisse{
+
+    .inputBaisse {
       width: 700px;
       height: 50px;
       display: flex;
       justify-content: space-between;
-      input{
+
+      input {
         font-size: 1.8rem;
         color: rgb(61, 59, 59);
         width: 310px;
@@ -187,19 +217,22 @@ header {
         border-radius: 10px;
       }
     }
-    span{
+
+    span {
       margin: 7% 0 50px 0;
       display: block;
       text-align: center;
       font-size: 4rem;
       font-weight: 700;
     }
-    p{
+
+    p {
       align-self: flex-start;
       margin-top: 70px;
       font-weight: bold;
       font-size: 2rem;
-      input{
+
+      input {
         background: rgba(255, 255, 255, 0.616);
         font-size: 1.8rem;
         color: rgb(61, 59, 59);
@@ -211,11 +244,13 @@ header {
       }
     }
   }
-  
+
 }
+
 .augm-baisse {
   background: $bgPages;
-  .bordures{
+
+  .bordures {
     margin-top: 1%;
     padding: 3rem 5rem 5rem 5rem;
     border: 1px solid transparent;
@@ -223,13 +258,16 @@ header {
     box-shadow: 0px 0px 25px rgb(0, 0, 0);
     background: rgb(193, 220, 243);
   }
-  hr{
+
+  hr {
     margin: 60px 0 0 0;
   }
 }
+
 .variation {
   background: $bgPages;
-  p.titre{
+
+  p.titre {
     margin-top: 7%;
     font-weight: bolder;
     font-size: 2rem;
@@ -238,19 +276,23 @@ header {
     line-height: 2.7rem;
     letter-spacing: 0.07rem;
   }
-  p{
+
+  p {
     font-weight: 500;
     font-size: 1.8rem;
     text-align: center;
     margin-top: 130px;
   }
-  .bordures{
+
+  .bordures {
     display: flex;
     flex-direction: column;
     align-items: center;
-    button#btnVariation{
-    @include styleBtnCalc
+
+    button#btnVariation {
+      @include styleBtnCalc
     }
+
     width: 45%;
     height: 80%;
     margin-top: 3%;
@@ -260,117 +302,14 @@ header {
     box-shadow: 0px 0px 25px rgb(0, 0, 0);
     background: rgb(193, 220, 243);
   }
-  .inputs{
+
+  .inputs {
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
-  input{
-    font-size: 1.8rem;
-    color: rgb(61, 59, 59);
-    width: 310px;
-    text-align: center;
-    padding: 5px 8px;
-    border: none;
-    border-radius: 10px;
-  }
-}
-.pourcEnNb {
-  background: $bgPages;
-  p.titre{
-    margin-top: 7%;
-    font-weight: 700;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 130px;
-    line-height: 2.7rem;
-    letter-spacing: 0.07rem;
-  }
-  p.phraseResultatPourcEnNb{
-    font-weight: 500;
-    font-size: 1.8rem;
-    text-align: center;
-    margin-top: 130px;
-    input{
-      text-align: center;
-      width: 100px;
-      background: rgba(0, 0, 0, 0);
-    }
-  }
-  .bordures{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    button#btnPourcEnNb{
-    @include styleBtnCalc
-    }
-    width: 45%;
-    height: 80%;
-    margin-top: 3%;
-    padding: 3rem 5rem 5rem 5rem;
-    border: 1px solid transparent;
-    border-radius: 20px;
-    box-shadow: 0px 0px 25px rgb(0, 0, 0);
-    background: rgb(193, 220, 243);
-  }
-  .inputs{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  input{
-    font-size: 1.8rem;
-    color: rgb(15, 15, 15);
-    width: 310px;
-    text-align: center;
-    padding: 5px 8px;
-    border: none;
-    border-radius: 10px;
-  }
-}
-.nbEnPourc {
-  background: $bgPages;
-  p.titre{
-    margin-top: 7%;
-    font-weight: 700;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 130px;
-    line-height: 2.7rem;
-    letter-spacing: 0.07rem;
-  }
-  p.phraseResultatNbEnPourc{
-    font-weight: 500;
-    font-size: 1.8rem;
-    text-align: center;
-    margin-top: 130px;
-    input{
-      width: 150px;
-      background: rgba(0, 0, 0, 0);
-    }
-  }
-  .bordures{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    button#btnNbEnPourc{
-    @include styleBtnCalc
-    }
-    width: 45%;
-    height: 80%;
-    margin-top: 3%;
-    padding: 3rem 5rem 5rem 5rem;
-    border: 1px solid transparent;
-    border-radius: 20px;
-    box-shadow: 0px 0px 25px rgb(0, 0, 0);
-    background: rgb(193, 220, 243);
-  }
-  .inputs{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  input{
+
+  input {
     font-size: 1.8rem;
     color: rgb(61, 59, 59);
     width: 310px;
@@ -381,3 +320,137 @@ header {
   }
 }
 
+.pourcEnNb {
+  background: $bgPages;
+
+  p.titre {
+    margin-top: 7%;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 130px;
+    line-height: 2.7rem;
+    letter-spacing: 0.07rem;
+  }
+
+  p.phraseResultatPourcEnNb {
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 130px;
+
+    input {
+      text-align: center;
+      width: 100px;
+      background: rgba(0, 0, 0, 0);
+    }
+  }
+
+  .bordures {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button#btnPourcEnNb {
+      @include styleBtnCalc
+    }
+
+    width: 45%;
+    height: 80%;
+    margin-top: 3%;
+    padding: 3rem 5rem 5rem 5rem;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px rgb(0, 0, 0);
+    background: rgb(193, 220, 243);
+  }
+
+  .inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input {
+    font-size: 1.8rem;
+    color: rgb(15, 15, 15);
+    width: 310px;
+    text-align: center;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 10px;
+  }
+}
+
+.nbEnPourc {
+  background: $bgPages;
+
+  p.titre {
+    margin-top: 7%;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 130px;
+    line-height: 2.7rem;
+    letter-spacing: 0.07rem;
+  }
+
+  p.phraseResultatNbEnPourc {
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 130px;
+    width: auto;
+  }
+
+  .bordures {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button#btnNbEnPourc {
+      @include styleBtnCalc
+    }
+
+    width: 45%;
+    height: 80%;
+    margin-top: 3%;
+    padding: 3rem 5rem 5rem 5rem;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px rgb(0, 0, 0);
+    background: rgb(193, 220, 243);
+  }
+
+  .inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input {
+    font-size: 1.8rem;
+    color: rgb(61, 59, 59);
+    width: 310px;
+    text-align: center;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 10px;
+  }
+}
+
+/* @media all and (max-width: 1800px) {
+  .inputs {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 15%;
+  }
+
+  header {
+    flex-direction: column;
+    height: 100%;
+    width: 30%;
+    z-index: 2;
+  }
+} */
