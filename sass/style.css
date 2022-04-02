@@ -23,6 +23,10 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.bouttonMenuDeroulant {
+  display: none;
+}
+
 /*-------------------------------HEADER-------------------------------------*/
 ul {
   list-style: none;
@@ -42,9 +46,8 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -52,20 +55,23 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  background: #18344b;
+  background: rgba(24, 52, 75, 0.582);
+  z-index: 2;
 }
 
 header .nomSite {
   font-size: 1.5rem;
   color: #72dbdf;
   font-family: "Ubuntu", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-header::before {
-  content: url(../img/percentageIcon.svg);
-  height: 60px;
-  width: 60px;
-  margin-left: 2rem;
+header .nomSite img {
+  height: 50px;
+  width: 50px;
+  margin-right: 1rem;
   line-height: none;
 }
 
@@ -128,7 +134,6 @@ header .menu li a:hover::after {
 }
 
 .inner-container {
-  padding-top: 6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,6 +156,7 @@ header .menu li a:hover::after {
 }
 
 .page {
+  padding-top: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,9 +210,8 @@ header .menu li a:hover::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .page .augmentation .inputAugmentation input {
@@ -280,9 +285,8 @@ header .menu li a:hover::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .page .baisse .inputBaisse input {
@@ -323,17 +327,17 @@ header .menu li a:hover::after {
 }
 
 .augm-baisse {
-  background: radial-gradient(#4faebb, #034079);
+  background: url(../img/bgPages.jpg);
 }
 
-.augm-baisse .bordures {
-  margin-top: 1%;
-  padding: 3rem 5rem 5rem 5rem;
+.augm-baisse .card {
+  margin-top: 3%;
+  padding: 3rem 4rem 3rem 4rem;
   border: 1px solid transparent;
   border-radius: 20px;
   -webkit-box-shadow: 0px 0px 25px black;
           box-shadow: 0px 0px 25px black;
-  background: #c1dcf3;
+  background: rgba(193, 220, 243, 0.904);
 }
 
 .augm-baisse hr {
@@ -341,7 +345,7 @@ header .menu li a:hover::after {
 }
 
 .variation {
-  background: radial-gradient(#4faebb, #034079);
+  background: url(../img/bgPages.jpg);
 }
 
 .variation p.titre {
@@ -361,7 +365,7 @@ header .menu li a:hover::after {
   margin-top: 130px;
 }
 
-.variation .bordures {
+.variation .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -380,10 +384,10 @@ header .menu li a:hover::after {
   border-radius: 20px;
   -webkit-box-shadow: 0px 0px 25px black;
           box-shadow: 0px 0px 25px black;
-  background: #c1dcf3;
+  background: rgba(193, 220, 243, 0.904);
 }
 
-.variation .bordures button#btnVariation {
+.variation .card button#btnVariation {
   background: #ff6600;
   color: #d4f3f7;
   font-size: 1.3rem;
@@ -418,7 +422,7 @@ header .menu li a:hover::after {
 }
 
 .pourcEnNb {
-  background: radial-gradient(#4faebb, #034079);
+  background: url(../img/bgPages.jpg);
 }
 
 .pourcEnNb p.titre {
@@ -444,7 +448,7 @@ header .menu li a:hover::after {
   background: rgba(0, 0, 0, 0);
 }
 
-.pourcEnNb .bordures {
+.pourcEnNb .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -463,10 +467,10 @@ header .menu li a:hover::after {
   border-radius: 20px;
   -webkit-box-shadow: 0px 0px 25px black;
           box-shadow: 0px 0px 25px black;
-  background: #c1dcf3;
+  background: rgba(193, 220, 243, 0.904);
 }
 
-.pourcEnNb .bordures button#btnPourcEnNb {
+.pourcEnNb .card button#btnPourcEnNb {
   background: #ff6600;
   color: #d4f3f7;
   font-size: 1.3rem;
@@ -501,7 +505,7 @@ header .menu li a:hover::after {
 }
 
 .nbEnPourc {
-  background: radial-gradient(#4faebb, #034079);
+  background: url(../img/bgPages.jpg);
 }
 
 .nbEnPourc p.titre {
@@ -522,7 +526,7 @@ header .menu li a:hover::after {
   width: auto;
 }
 
-.nbEnPourc .bordures {
+.nbEnPourc .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -541,10 +545,10 @@ header .menu li a:hover::after {
   border-radius: 20px;
   -webkit-box-shadow: 0px 0px 25px black;
           box-shadow: 0px 0px 25px black;
-  background: #c1dcf3;
+  background: rgba(193, 220, 243, 0.904);
 }
 
-.nbEnPourc .bordures button#btnNbEnPourc {
+.nbEnPourc .card button#btnNbEnPourc {
   background: #ff6600;
   color: #d4f3f7;
   font-size: 1.3rem;
@@ -578,19 +582,85 @@ header .menu li a:hover::after {
   border-radius: 10px;
 }
 
-/* @media all and (max-width: 1800px) {
+/* ------------------------------Media queries----------------------- */
+@media all and (max-width: 1800px) {
   .inputs {
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     height: 15%;
   }
-
+  .augm-baisse .card {
+    width: 750px;
+  }
   header {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     height: 100%;
-    width: 30%;
+    width: 390px;
     z-index: 2;
+  }
+  header .menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 3rem;
+  }
+  header .menu li {
+    margin-top: 3rem;
+  }
+  .inner-container {
+    padding-top: 0;
+  }
+  .card {
+    position: absolute;
+    margin-left: 29%;
+    top: 1rem;
+  }
+  .nomSite {
+    border-bottom: 3px solid #ff6600;
+    padding-bottom: 5px;
+  }
+  .variation .card,
+  .pourcEnNb .card,
+  .nbEnPourc .card {
+    width: 700px;
+    height: 850px;
+  }
+}
+
+/* @media all and (max-width: 1250px) {
+
+  .bouttonMenuDeroulant {
+    display: inline;
+
+    img {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 70px;
+      height: 70px;
+      z-index: 5;
+      cursor: pointer;
+    }
+  }
+
+  .card {
+    position: absolute;
+    top: 3%;
+    margin-left: 5%;
   }
 } */
 /*# sourceMappingURL=style.css.map */

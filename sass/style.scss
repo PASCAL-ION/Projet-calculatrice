@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 @import "libs/mixins.scss";
+@import "libs/media.scss";
 
 body {
   font-size: 16px;
@@ -8,7 +9,8 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
-$bgPages: radial-gradient(rgb(79, 174, 187), rgb(3, 64, 121));
+$bgPages: url(../img/bgPages.jpg);
+$bgCard: rgba(193, 220, 243, 0.904);
 
 *,
 *::after,
@@ -23,6 +25,10 @@ input[type="number"]::-webkit-inner-spin-button {
   /*Faire disparaître les petites flèches des champs number*/
   -webkit-appearance: none;
   margin: 0;
+}
+
+.bouttonMenuDeroulant {
+  display: none;
 }
 
 /*-------------------------------HEADER-------------------------------------*/
@@ -42,27 +48,29 @@ a {
 header {
   position: fixed;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 6rem;
   width: 100%;
   top: 0;
   left: 0;
-  background: rgb(24, 52, 75);
+  background: rgba(24, 52, 75, 0.582);
+  z-index: 2;
 
   .nomSite {
     font-size: 1.5rem;
     color: rgb(114, 219, 223);
     font-family: "Ubuntu", sans-serif;
+    display: flex;
+
+    img {
+      height: 50px;
+      width: 50px;
+      margin-right: 1rem;
+      line-height: none;
+    }
   }
 
-  &::before {
-    content: url(../img/percentageIcon.svg);
-    height: 60px;
-    width: 60px;
-    margin-left: 2rem;
-    line-height: none;
-  }
 
   .menu {
     display: flex;
@@ -111,7 +119,6 @@ header {
 }
 
 .inner-container {
-  padding-top: 6rem;
   display: flex;
   flex-wrap: nowrap;
   height: 100vh;
@@ -128,6 +135,7 @@ header {
 }
 
 .page {
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -150,7 +158,7 @@ header {
       width: 700px;
       height: 50px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
 
       input {
         font-size: 1.8rem;
@@ -205,7 +213,7 @@ header {
       width: 700px;
       height: 50px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
 
       input {
         font-size: 1.8rem;
@@ -250,13 +258,13 @@ header {
 .augm-baisse {
   background: $bgPages;
 
-  .bordures {
-    margin-top: 1%;
-    padding: 3rem 5rem 5rem 5rem;
+  .card {
+    margin-top: 3%;
+    padding: 3rem 4rem 3rem 4rem;
     border: 1px solid transparent;
     border-radius: 20px;
     box-shadow: 0px 0px 25px rgb(0, 0, 0);
-    background: rgb(193, 220, 243);
+    background: $bgCard;
   }
 
   hr {
@@ -284,7 +292,7 @@ header {
     margin-top: 130px;
   }
 
-  .bordures {
+  .card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -300,7 +308,7 @@ header {
     border: 1px solid transparent;
     border-radius: 20px;
     box-shadow: 0px 0px 25px rgb(0, 0, 0);
-    background: rgb(193, 220, 243);
+    background: $bgCard;
   }
 
   .inputs {
@@ -346,7 +354,7 @@ header {
     }
   }
 
-  .bordures {
+  .card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -362,7 +370,7 @@ header {
     border: 1px solid transparent;
     border-radius: 20px;
     box-shadow: 0px 0px 25px rgb(0, 0, 0);
-    background: rgb(193, 220, 243);
+    background: $bgCard;
   }
 
   .inputs {
@@ -403,7 +411,7 @@ header {
     width: auto;
   }
 
-  .bordures {
+  .card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -419,7 +427,7 @@ header {
     border: 1px solid transparent;
     border-radius: 20px;
     box-shadow: 0px 0px 25px rgb(0, 0, 0);
-    background: rgb(193, 220, 243);
+    background: $bgCard;
   }
 
   .inputs {
@@ -439,7 +447,8 @@ header {
   }
 }
 
-/* @media all and (max-width: 1800px) {
+/* ------------------------------Media queries----------------------- */
+@media all and (max-width: 1800px) {
   .inputs {
     flex-direction: column;
     align-items: center;
@@ -447,10 +456,73 @@ header {
     height: 15%;
   }
 
+  .augm-baisse {
+    .card {
+      width: 750px;
+    }
+  }
+
   header {
     flex-direction: column;
+    justify-content: space-around;
     height: 100%;
-    width: 30%;
+    width: 390px;
     z-index: 2;
+
+    .menu {
+      flex-direction: column;
+      margin-bottom: 3rem;
+
+      li {
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  .inner-container {
+    padding-top: 0;
+  }
+
+  .card {
+    position: absolute;
+    margin-left: 29%;
+    top: 1rem;
+  }
+
+  .nomSite {
+    border-bottom: 3px solid rgb(255, 102, 0);
+    padding-bottom: 5px;
+  }
+
+  .variation,
+  .pourcEnNb,
+  .nbEnPourc {
+    .card {
+      width: 700px;
+      height: 850px;
+    }
+  }
+}
+
+/* @media all and (max-width: 1250px) {
+
+  .bouttonMenuDeroulant {
+    display: inline;
+
+    img {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 70px;
+      height: 70px;
+      z-index: 5;
+      cursor: pointer;
+    }
+  }
+
+  .card {
+    position: absolute;
+    top: 3%;
+    margin-left: 5%;
   }
 } */

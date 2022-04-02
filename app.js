@@ -7,6 +7,7 @@ liens.forEach(lien =>{ /* Pour chaque liens dans le tableau "liens" */
     })
 })
 
+
 /* -----------------------------Augmentation----------------------------------------- */
 const inputAugmentationNb = document.querySelector(".augmentationNb")
 const inputAugmentationPourc = document.querySelector(".augmentationPourc")
@@ -15,7 +16,6 @@ const phraseResultatAugmentation = document.querySelector(".resultatAugmentation
 let resultatCalculAugmentation = 0
 
 bouttonAugmentation.addEventListener("click", function (){
-    phraseResultatAugmentation = "Veuillez remplir les deux champs"
     resultatCalculAugmentation = parseFloat(inputAugmentationNb.value) + (parseFloat(inputAugmentationPourc.value)/100 * parseInt(inputAugmentationNb.value))
     phraseResultatAugmentation.innerHTML = `${inputAugmentationNb.value} + ${inputAugmentationPourc.value}% est égal a ${resultatCalculAugmentation}`
 })
